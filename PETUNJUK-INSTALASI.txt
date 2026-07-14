@@ -1,46 +1,35 @@
-YG GEOPORTAL v4 FINAL — FASE 1 STANDALONE + PWA
+YG GEOPORTAL V2 — GITHUB PAGES + PWA
 
-HASIL UTAMA
-- GitHub Pages menjadi aplikasi utama.
-- WebGIS, Monitoring, dan Kirim Laporan tidak lagi bergantung pada iframe Blogger.
-- Add to Home Screen memakai logo Yayasan Gambut.
-- Data Apps Script tidak disimpan di cache sehingga tetap diperbarui.
-- Layer kawasan hutan dan gambut tetap memakai lazy loading.
-- Repository lama disimpan dalam folder _legacy sebagai arsip, bukan dipanggil halaman utama.
+A. REPOSITORY PRODUKSI
+- Repository: mulyadi-YGIndo/yg-geoportal-v2
+- Branch: main
+- GitHub Pages: https://mulyadi-ygindo.github.io/yg-geoportal-v2/
 
-A. UPLOAD REPOSITORY
-1. Ekstrak folder github-repository.
-2. Upload seluruh isi folder tersebut ke root repository mulyadibagan/yg-geoportal.
-3. Pilih Replace files bila diminta.
-4. Commit dengan pesan:
-   YG GeoPortal v4 standalone and PWA
-
-B. UJI GITHUB PAGES
-- https://mulyadibagan.github.io/yg-geoportal/index.html?v=v4-final1
-- https://mulyadibagan.github.io/yg-geoportal/webgis.html?v=v4-final1
-- https://mulyadibagan.github.io/yg-geoportal/monitoring.html?v=v4-final1
-- https://mulyadibagan.github.io/yg-geoportal/report.html?v=v4-final1
+B. UJI HALAMAN
+- Beranda: https://mulyadi-ygindo.github.io/yg-geoportal-v2/
+- WebGIS: https://mulyadi-ygindo.github.io/yg-geoportal-v2/webgis.html
+- Monitoring: https://mulyadi-ygindo.github.io/yg-geoportal-v2/monitoring.html
+- Kirim Laporan: https://mulyadi-ygindo.github.io/yg-geoportal-v2/report.html
 
 C. BLOGGER
-1. Buat/ganti halaman WebGIS di Blogger.
-2. Mode HTML.
+1. Buka halaman WebGIS di Blogger.
+2. Pilih mode HTML.
 3. Tempel seluruh isi BLOGGER-LAUNCHER.html.
-4. Halaman Blogger menjadi pintu masuk, tidak lagi menampilkan aplikasi melalui iframe.
+4. Blogger menjadi pintu masuk; aplikasi utama tetap berjalan dari GitHub Pages.
 
 D. SMARTPHONE
-1. Hapus shortcut lama yang masih memakai ikon Blogger.
-2. Buka halaman GitHub Pages YG GeoPortal di Chrome.
-3. Pilih Tambahkan ke layar utama / Install app.
+1. Hapus shortcut versi lama bila masih memakai ikon atau alamat lama.
+2. Buka GitHub Pages YG GeoPortal di Chrome.
+3. Pilih Install app / Tambahkan ke layar utama.
 4. Nama aplikasi: YG GeoPortal.
-5. Ikon: logo Yayasan Gambut.
 
-E. CATATAN CACHE
-- Service worker memakai versi yg-geoportal-v4-20260714-1.
-- Saat mengganti banyak file aplikasi, naikkan angka CACHE_NAME di service-worker.js.
-- API Apps Script selalu diambil dari jaringan dan tidak dicache.
+E. CACHE PWA
+- Cache saat ini: yg-geoportal-v2-20260714-2.
+- Saat mengganti file aplikasi, naikkan versi CACHE_NAME pada service-worker.js.
+- Samakan parameter versi service worker pada js/pwa.js.
+- API Google Apps Script selalu diambil dari jaringan dan tidak dicache.
 
-TAHAP BERIKUTNYA
-- Editor polygon visual pada halaman admin.
-- Hubungan riwayat monitoring dengan Object_ID.
-- Profil permanen setiap objek.
-- Analisis overlay kawasan hutan dan gambut.
+F. KEAMANAN DATA
+- Jangan menghapus database produksi sebelum backup.
+- Jangan mengganti Object_ID yang sudah dipakai laporan lama.
+- Uji formulir baru menggunakan database staging sebelum produksi.
