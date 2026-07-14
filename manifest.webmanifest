@@ -1,11 +1,13 @@
 {
-  "name": "YG GeoPortal 2.0",
+  "name": "YG GeoPortal",
   "short_name": "YG GeoPortal",
-  "start_url": "./",
+  "description": "Portal data spasial dan monitoring Yayasan Gambut",
+  "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#edf4f1",
-  "theme_color": "#087653",
+  "orientation": "any",
+  "background_color": "#f2f7f4",
+  "theme_color": "#079cde",
   "icons": [
     {
       "src": "assets/logo-yayasan-gambut-192.png",

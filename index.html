@@ -1,143 +1,109 @@
 <!doctype html>
 <html lang="id">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>YG GeoPortal 2.0</title>
-  <meta name="theme-color" content="#087653">
-  <link rel="icon" href="assets/logo-yayasan-gambut.png">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="styles/app.css?v=20260714-s1">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="description" content="YG GeoPortal - dashboard data spasial Yayasan Gambut berbasis Master Database."/>
+  <title>YG GeoPortal | Yayasan Gambut</title>
+  <link rel="icon" href="assets/logo-yayasan-gambut.png"/>
+  <link rel="stylesheet" href="css/app.css"/>
+  <link rel="stylesheet" href="css/dashboard-v3.css?v=20260714-1"/>
+  <meta name="theme-color" content="#079cde">
+  <meta name="application-name" content="YG GeoPortal">
+  <meta name="apple-mobile-web-app-title" content="YG GeoPortal">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="manifest" href="manifest.webmanifest?v=20260714-1">
+  <link rel="apple-touch-icon" href="assets/logo-yayasan-gambut-192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/logo-yayasan-gambut-192.png">
 </head>
 <body>
-  <div id="app">
-    <header class="app-header">
-      <a class="brand" href="#dashboard">
-        <img src="assets/logo-yayasan-gambut.png" alt="Logo Yayasan Gambut">
-        <span><strong>YG GeoPortal 2.0</strong><small>Spatial Management System</small></span>
-      </a>
-      <nav>
-        <a href="#dashboard" data-route="dashboard">Dashboard</a>
-        <a href="#spatial" data-route="spatial">Spatial Manager</a>
-        <a href="#monitoring" data-route="monitoring">Monitoring</a>
-      </nav>
-      <div class="header-actions">
-        <button id="refresh-app" type="button">Muat ulang data</button>
-        <span id="connection-status">Menghubungkan…</span>
-      </div>
-    </header>
-
-    <main>
-      <section id="page-dashboard" class="page">
-        <div class="page-head">
-          <div>
-            <span class="eyebrow">SPRINT 1</span>
-            <h1>Dashboard YG GeoPortal</h1>
-            <p>Ringkasan Master Database untuk program, layer, objek, wilayah, dan monitoring.</p>
-          </div>
-        </div>
-
-        <div class="stats-grid">
-          <article><span>Program</span><strong id="stat-programs">0</strong><small>program unik</small></article>
-          <article><span>Layer</span><strong id="stat-layers">0</strong><small>layer operasional</small></article>
-          <article><span>Objek</span><strong id="stat-objects">0</strong><small>objek aktif</small></article>
-          <article><span>Desa</span><strong id="stat-villages">0</strong><small>wilayah terdata</small></article>
-          <article><span>Total luas</span><strong id="stat-area">0 ha</strong><small>dari objek program</small></article>
-          <article><span>Monitoring</span><strong id="stat-monitoring">0</strong><small>hasil terverifikasi</small></article>
-        </div>
-
-        <div class="dashboard-grid">
-          <section class="panel">
-            <div class="panel-head"><h2>Objek per program</h2></div>
-            <div id="program-summary" class="summary-list"></div>
-          </section>
-          <section class="panel">
-            <div class="panel-head"><h2>Objek per layer</h2></div>
-            <div id="layer-summary" class="summary-list"></div>
-          </section>
-          <section class="panel">
-            <div class="panel-head"><h2>Pembaruan sistem</h2></div>
-            <div id="system-summary" class="system-summary">
-              <p>Menunggu data dari Master Database…</p>
-            </div>
-          </section>
-        </div>
-      </section>
-
-      <section id="page-spatial" class="page" hidden>
-        <div class="spatial-layout">
-          <aside class="explorer">
-            <div class="explorer-head">
-              <span class="eyebrow">OBJECT EXPLORER</span>
-              <h2>Filter data</h2>
-            </div>
-
-            <label>Program
-              <select id="filter-program"><option value="">Semua program</option></select>
-            </label>
-            <label>Layer
-              <select id="filter-layer"><option value="">Semua layer</option></select>
-            </label>
-            <label>Kabupaten
-              <select id="filter-regency"><option value="">Semua kabupaten</option></select>
-            </label>
-            <label>Kecamatan
-              <select id="filter-district"><option value="">Semua kecamatan</option></select>
-            </label>
-            <label>Desa
-              <select id="filter-village"><option value="">Semua desa</option></select>
-            </label>
-            <label>Cari objek
-              <input id="filter-search" type="search" placeholder="Nama, ID, kategori…">
-            </label>
-
-            <div class="explorer-count" id="explorer-count">0 objek</div>
-            <div id="object-list" class="object-list"></div>
-          </aside>
-
-          <section class="map-shell">
-            <div class="map-toolbar">
-              <button id="fit-all" type="button">Tampilkan semua</button>
-              <button id="clear-selection" type="button">Hapus pilihan</button>
-            </div>
-            <div id="map"></div>
-          </section>
-
-          <aside class="properties">
-            <div id="properties-empty" class="empty-state">
-              Klik objek pada daftar atau peta untuk melihat informasi.
-            </div>
-            <div id="properties-content" hidden>
-              <span class="eyebrow" id="prop-layer-label">LAYER</span>
-              <h2 id="prop-name">Nama objek</h2>
-              <div class="property-grid" id="property-grid"></div>
-              <div class="property-actions">
-                <a id="open-current-editor" href="#" target="_blank" rel="noopener">Buka editor polygon lama</a>
-              </div>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <section id="page-monitoring" class="page" hidden>
-        <div class="page-head">
-          <div>
-            <span class="eyebrow">MONITORING</span>
-            <h1>Monitoring terintegrasi</h1>
-            <p>Daftar hasil monitoring yang sudah masuk dalam Master Database.</p>
-          </div>
-        </div>
-        <div id="monitoring-list" class="monitoring-grid"></div>
-      </section>
-    </main>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <img src="assets/logo-yayasan-gambut.png" alt="Logo Yayasan Gambut"/>
+      <span><strong>YG GeoPortal</strong><span>WebGIS Yayasan Gambut</span></span>
+    </a>
+    <nav class="nav">
+      <a href="index.html">Beranda</a>
+      <a href="webgis.html">WebGIS</a>
+      <a href="report.html">Kirim Laporan</a>
+      <a href="monitoring.html">Monitoring</a>
+      <a class="primary" href="webgis.html">Buka Peta</a>
+    </nav>
   </div>
+</header>
 
-  <script>
-    window.YG_V2_CONFIG = {
-      api: "https://script.google.com/macros/s/AKfycbxUe4QyBvSiL9UJsL-nsJ5XrohDabwqhYYR9q5CTgLYiW1ZCfVy429iMlpU-lCDUSvvRg/exec"
-    };
-  </script>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script type="module" src="app/main.js?v=20260714-s1"></script>
+<main class="container">
+  <section class="hero dashboard-hero">
+    <div class="hero-main">
+      <div class="eyebrow">MASTER DATABASE WEBGIS YAYASAN GAMBUT</div>
+      <h1>Dashboard spasial yang diperbarui langsung dari database</h1>
+      <p>Objek program, batas intervensi, infrastruktur, laporan masyarakat, dan data monitoring disatukan sebagai dasar pengambilan keputusan.</p>
+      <div class="hero-actions">
+        <a class="btn btn-light" href="webgis.html">🗺️ Buka WebGIS</a>
+        <a class="btn btn-outline" href="monitoring.html">📊 Dashboard Monitoring</a>
+        <button class="btn btn-outline" type="button" data-install-app hidden>📲 Pasang Aplikasi</button>
+      </div>
+      <div class="database-note" id="dashboard-updated">Menghubungkan ke Master Database…</div>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat"><strong id="dash-objects">—</strong><span>Objek aktif</span></div>
+      <div class="stat"><strong id="dash-villages">—</strong><span>Desa terdata</span></div>
+      <div class="stat"><strong id="dash-mangrove-area">—</strong><span>Area mangrove</span></div>
+      <div class="stat"><strong id="dash-reports">—</strong><span>Objek laporan masyarakat</span></div>
+    </div>
+  </section>
+
+  <section class="section dashboard-panel">
+    <div class="section-head">
+      <div>
+        <h2>Ringkasan objek per kategori</h2>
+        <p>Dihitung otomatis dari objek aktif dalam Master Database.</p>
+      </div>
+    </div>
+    <div class="category-grid" id="category-grid">
+      <div class="dashboard-loading">Memuat kategori…</div>
+    </div>
+  </section>
+
+  <section class="section dashboard-panel">
+    <div class="section-head">
+      <div>
+        <h2>Ringkasan wilayah dan program</h2>
+        <p>Lokasi dengan jumlah objek terbanyak.</p>
+      </div>
+    </div>
+    <div class="dashboard-columns">
+      <div>
+        <h3>Objek per desa</h3>
+        <div class="ranking-list" id="village-ranking"></div>
+      </div>
+      <div>
+        <h3>Objek per layer</h3>
+        <div class="ranking-list" id="layer-ranking"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div>
+      <h2>Jelajahi objek secara spasial</h2>
+      <p>Aktifkan layer, cari lokasi, dan buka atribut setiap objek langsung dari database.</p>
+    </div>
+    <a href="webgis.html">Buka WebGIS Sekarang</a>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>© Yayasan Gambut</span>
+    <span>Data spasial untuk transparansi, pembelajaran, dan kolaborasi.</span>
+  </div>
+</footer>
+
+<script src="js/dashboard-v3.js?v=20260714-1"></script>
+  <script src="js/pwa.js?v=20260714-1"></script>
 </body>
 </html>

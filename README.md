@@ -1,47 +1,21 @@
-# YG GeoPortal 2.0 — Sprint 1
+# YG GeoPortal V6
 
-Fondasi aplikasi baru yang berjalan terpisah dari WebGIS produksi.
+## Perubahan utama
+- Struktur peta modular: config.js, map.js, ui.js
+- Peta memakai layout absolut penuh sehingga tidak kosong atau terpotong
+- Sidebar desktop dapat diciutkan
+- Sidebar mobile memakai overlay
+- Popup profesional
+- Dashboard, legenda, pencarian, lokasi pengguna, fullscreen
+- Tetap menggunakan OpenStreetMap gratis
 
-## Fitur Sprint 1
+## Cara memperbarui GitHub
+1. Ekstrak ZIP.
+2. Upload seluruh isi folder ke root repository `yg-geoportal`.
+3. Setujui penggantian file lama.
+4. Commit changes.
+5. Tunggu GitHub Pages 1–2 menit.
+6. Buka:
+   https://mulyadibagan.github.io/yg-geoportal/webgis.html?v=6
 
-- Dashboard Master Database
-- Ringkasan program, layer, objek, desa, luas, dan monitoring
-- Spatial Manager tiga panel
-- Filter Program
-- Filter Layer
-- Filter Kabupaten
-- Filter Kecamatan
-- Filter Desa
-- Pencarian objek
-- Peta objek langsung dari Apps Script API
-- Panel informasi objek
-- Monitoring terintegrasi dasar
-
-## API
-
-Aplikasi membaca:
-
-`https://script.google.com/macros/s/AKfycbxUe4QyBvSiL9UJsL-nsJ5XrohDabwqhYYR9q5CTgLYiW1ZCfVy429iMlpU-lCDUSvvRg/exec?page=objects`
-
-dan:
-
-`https://script.google.com/macros/s/AKfycbxUe4QyBvSiL9UJsL-nsJ5XrohDabwqhYYR9q5CTgLYiW1ZCfVy429iMlpU-lCDUSvvRg/exec?page=dashboard-summary`
-
-## Instalasi
-
-Upload seluruh isi folder ini ke repository baru, misalnya:
-
-`mulyadibagan/yg-geoportal-v2`
-
-Aktifkan GitHub Pages dari branch `main`, folder root.
-
-Buka:
-
-`https://mulyadibagan.github.io/yg-geoportal-v2/`
-
-## Catatan
-
-- Repository lama tetap menjadi produksi.
-- Sprint 1 belum mengubah data.
-- Tombol “Buka editor polygon lama” masih mengarah ke editor yang ada.
-- Sprint 2 akan menambahkan edit polygon/line/point, undo/redo, dan riwayat revisi.
+Blogger tidak perlu diubah karena iframe mengambil halaman GitHub yang sama.
