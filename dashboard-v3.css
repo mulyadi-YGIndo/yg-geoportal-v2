@@ -75,14 +75,13 @@
   .category-grid,.dashboard-columns{grid-template-columns:1fr}
 }
 
-/* Dashboard V4: impact and donor classification */
-.dashboard-stat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-.dashboard-stat-grid .stat{min-height:104px}
-.dashboard-stat-grid .stat-highlight{
-  background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(222,247,235,.96));
-  border:1px solid rgba(8,118,83,.16);
-}
-.dashboard-stat-grid .stat-highlight strong{color:#087653}
-.dashboard-columns-3{grid-template-columns:repeat(3,minmax(0,1fr))}
-@media(max-width:1050px){.dashboard-columns-3{grid-template-columns:1fr 1fr}}
-@media(max-width:680px){.dashboard-columns-3,.dashboard-stat-grid{grid-template-columns:1fr}}
+
+/* Dashboard impact metadata v4 */
+.impact-stat-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.dashboard-filters{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:4px 0 14px}
+.dashboard-filters label{display:grid;gap:6px;color:#53655d;font-size:12px;font-weight:700}
+.dashboard-filters select{width:100%;min-height:42px;padding:9px 11px;border:1px solid #d3e2da;border-radius:10px;background:#fff;color:#173b2f}
+.filter-summary{margin:0 0 18px;padding:12px 14px;border-radius:12px;background:#eaf6f0;color:#315c4a;font-size:13px}
+.dashboard-columns-three{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:900px){.impact-stat-grid,.dashboard-filters{grid-template-columns:repeat(2,minmax(0,1fr))}.dashboard-columns-three{grid-template-columns:1fr}}
+@media(max-width:520px){.impact-stat-grid,.dashboard-filters{grid-template-columns:1fr}}

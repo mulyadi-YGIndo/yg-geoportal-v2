@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Object Manager | YG GeoPortal</title>
   <link rel="icon" href="assets/logo-yayasan-gambut.png">
-  <link rel="stylesheet" href="css/object-manager.css?v=3">
+  <link rel="stylesheet" href="css/object-manager.css?v=4">
   <meta name="theme-color" content="#079cde">
   <meta name="application-name" content="YG GeoPortal">
   <meta name="apple-mobile-web-app-title" content="YG GeoPortal">
@@ -20,7 +20,7 @@
   <a href="index.html">← Dashboard</a>
   <div>
     <h1>Object Manager</h1>
-    <p>Standarisasi atribut, pencocokan monitoring, dan simpan langsung ke GitHub.</p>
+    <p>Kelola metadata objek, klasifikasi donor/program, pencocokan monitoring, dan simpan ke GitHub.</p>
   </div>
 </header>
 
@@ -102,10 +102,87 @@
           <label>Panjang (m)
             <input name="Panjang_M" type="number" step="any">
           </label>
-          <label>Program
-            <input name="Program">
+          <label>Program/Proyek
+            <input name="Program" list="program-options" placeholder="Contoh: Community-Based Mangrove Rehabilitation">
+          </label>
+          <label>Donor/Pendana
+            <input name="Donor" list="donor-options" placeholder="Contoh: Aramco Asia Singapore">
+          </label>
+          <label>Mitra Pelaksana
+            <input name="Mitra" placeholder="Contoh: Global Environment Centre">
+          </label>
+          <label>Jenis Kegiatan
+            <select name="Jenis_Kegiatan">
+              <option value="">Pilih klasifikasi</option>
+              <option>Restorasi Mangrove</option>
+              <option>Restorasi Gambut</option>
+              <option>Pembibitan</option>
+              <option>Pencegahan Kebakaran</option>
+              <option>Infrastruktur Hidrologi</option>
+              <option>Agroforestri</option>
+              <option>Penghidupan Masyarakat</option>
+              <option>Pelatihan dan Penyadartahuan</option>
+              <option>Riset dan Monitoring</option>
+              <option>Administrasi/Referensi</option>
+              <option>Lainnya</option>
+            </select>
+          </label>
+          <label>Tema Program
+            <select name="Tema_Program">
+              <option value="">Pilih tema</option>
+              <option>Mangrove</option>
+              <option>Gambut</option>
+              <option>Kebakaran Hutan dan Lahan</option>
+              <option>Keanekaragaman Hayati</option>
+              <option>Penghidupan Berkelanjutan</option>
+              <option>Tata Kelola</option>
+              <option>Lintas Tema</option>
+            </select>
+          </label>
+          <label>Fase
+            <input name="Fase" placeholder="Contoh: Phase 3">
+          </label>
+          <label>Tanggal Mulai
+            <input name="Tanggal_Mulai" type="date">
+          </label>
+          <label>Tanggal Selesai
+            <input name="Tanggal_Selesai" type="date">
+          </label>
+          <label>Penerima Manfaat
+            <input name="Penerima_Manfaat" type="number" min="0" step="1">
+          </label>
+          <label>Kelompok Sasaran
+            <input name="Kelompok_Sasaran" placeholder="Contoh: KTH, KWT, pemuda, sekolah">
+          </label>
+          <label>SDGs
+            <input name="SDGs" placeholder="Contoh: 5, 8, 13, 14, 15">
+          </label>
+          <label>Sumber Data
+            <input name="Sumber_Data" placeholder="Contoh: Laporan proyek / monitoring lapangan">
           </label>
         </div>
+
+        <datalist id="donor-options">
+          <option value="Aramco Asia Singapore"></option>
+          <option value="PPCF Singapore"></option>
+          <option value="Pertamina Foundation"></option>
+          <option value="Penabulu Foundation"></option>
+          <option value="GIZ"></option>
+          <option value="Blue Action Fund"></option>
+          <option value="Darwin Initiative"></option>
+          <option value="Yayasan Gambut"></option>
+        </datalist>
+        <datalist id="program-options">
+          <option value="Community-Based Mangrove Rehabilitation Program"></option>
+          <option value="Pematang Duku Peatland Restoration"></option>
+          <option value="Green Transition Temiang"></option>
+          <option value="Siarang Arang Social Forestry"></option>
+        </datalist>
+
+        <section class="metadata-help">
+          <h3>Metadata untuk dashboard</h3>
+          <p>Isi minimal <b>Donor</b>, <b>Program</b>, <b>Jenis Kegiatan</b>, <b>Tahun</b>, <b>Jumlah Tanam</b>, dan <b>Luas</b>. Dashboard akan mengelompokkan dan menghitungnya otomatis.</p>
+        </section>
 
         <label>Catatan/Keterangan
           <textarea name="Ket" rows="3"></textarea>
@@ -139,8 +216,8 @@
   <input name="message" id="sync-message-field">
 </form>
 
-<script src="js/object-schema.js?v=3"></script>
-<script src="js/object-manager.js?v=3"></script>
+<script src="js/object-schema.js?v=4"></script>
+<script src="js/object-manager.js?v=4"></script>
   <script src="js/pwa.js?v=20260714-1"></script>
 </body>
 </html>
