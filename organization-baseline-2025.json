@@ -1,0 +1,23 @@
+{
+  "title": "Baseline Kinerja Yayasan Gambut 2025",
+  "source": "Annual Report 2025 Yayasan Gambut",
+  "sourceFileId": "1ZCo_NdcG5ARU6PMObSNgPwSCb_7TY_xs",
+  "status": "working_baseline_requires_reconciliation",
+  "warning": "Angka berasal dari beberapa snapshot waktu dalam Annual Report 2025. Jangan menjumlahkan entri yang tumpang tindih sebelum rekonsiliasi per objek dan program.",
+  "reportedMetrics": [
+    {"metric":"mangrove_trees_restored","value":25000,"qualifier":"lebih_dari","unit":"pohon","period":"hingga penutupan Fase 2 Mei 2025","verificationRequired":true},
+    {"metric":"mangrove_trees_snapshot","value":23502,"unit":"pohon","period":"snapshot kontribusi GREEN for Riau 2025","verificationRequired":true},
+    {"metric":"peatland_trees_snapshot","value":10000,"qualifier":"lebih_dari","unit":"pohon","period":"snapshot kontribusi GREEN for Riau 2025","verificationRequired":true},
+    {"metric":"wave_breaker","value":200,"unit":"meter","period":"hingga Februari 2025","verificationRequired":false},
+    {"metric":"community_nurseries","value":2,"unit":"unit","period":"snapshot GREEN for Riau 2025","verificationRequired":true},
+    {"metric":"mangrove_nursery_output","value":35700,"unit":"bibit","period":"snapshot GREEN for Riau 2025","verificationRequired":true},
+    {"metric":"participants","value":782,"unit":"orang","period":"snapshot GREEN for Riau 2025","verificationRequired":true},
+    {"metric":"canal_blocks_snapshot","value":7,"unit":"unit","period":"snapshot GREEN for Riau 2025","verificationRequired":true},
+    {"metric":"sepahat_nursery_capacity","value":27000,"unit":"bibit_per_siklus","period":"2025","verificationRequired":false},
+    {"metric":"sepahat_nursery_size","value":170,"unit":"m2","period":"2025","verificationRequired":false},
+    {"metric":"pematang_duku_canal_blocks","value":4,"unit":"unit","period":"2025","verificationRequired":false},
+    {"metric":"pematang_duku_agroforestry_planted","value":4000,"unit":"bibit","period":"10 Oktober 2025","breakdown":{"kopi_liberika":2500,"geronggang":1500},"verificationRequired":false},
+    {"metric":"imbo_putui_restoration_area","value":6,"unit":"ha","period":"2025","verificationRequired":false},
+    {"metric":"imbo_putui_trees_planted","value":1200,"unit":"bibit","period":"15–16 September 2025","verificationRequired":false}
+  ]
+}
