@@ -48,10 +48,13 @@
       <div class="database-note" id="dashboard-updated">Menghubungkan ke Master Database…</div>
     </div>
 
-    <div class="stat-grid">
+    <div class="stat-grid dashboard-stat-grid">
       <div class="stat"><strong id="dash-objects">—</strong><span>Objek aktif</span></div>
       <div class="stat"><strong id="dash-villages">—</strong><span>Desa terdata</span></div>
+      <div class="stat stat-highlight"><strong id="dash-seedlings">—</strong><span>Bibit tertanam</span></div>
+      <div class="stat"><strong id="dash-intervention-area">—</strong><span>Total luas intervensi</span></div>
       <div class="stat"><strong id="dash-mangrove-area">—</strong><span>Area mangrove</span></div>
+      <div class="stat"><strong id="dash-donors">—</strong><span>Donor terklasifikasi</span></div>
       <div class="stat"><strong id="dash-reports">—</strong><span>Objek laporan masyarakat</span></div>
     </div>
   </section>
@@ -87,6 +90,30 @@
     </div>
   </section>
 
+
+  <section class="section dashboard-panel">
+    <div class="section-head">
+      <div>
+        <h2>Klasifikasi donor dan program</h2>
+        <p>Dikelompokkan otomatis dari kolom Donor/Pendana dan Program pada Master Database.</p>
+      </div>
+    </div>
+    <div class="dashboard-columns dashboard-columns-3">
+      <div>
+        <h3>Objek per donor</h3>
+        <div class="ranking-list" id="donor-ranking"></div>
+      </div>
+      <div>
+        <h3>Bibit tertanam per donor</h3>
+        <div class="ranking-list" id="donor-seedling-ranking"></div>
+      </div>
+      <div>
+        <h3>Objek per program</h3>
+        <div class="ranking-list" id="program-ranking"></div>
+      </div>
+    </div>
+  </section>
+
   <section class="section cta">
     <div>
       <h2>Jelajahi objek secara spasial</h2>
@@ -103,7 +130,7 @@
   </div>
 </footer>
 
-<script src="js/dashboard-v3.js?v=20260714-1"></script>
+<script src="js/dashboard-v3.js?v=20260716-1"></script>
   <script src="js/pwa.js?v=20260714-1"></script>
 </body>
 </html>
